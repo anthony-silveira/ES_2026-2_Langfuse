@@ -1,5 +1,24 @@
 # ES_2026-2_Langfuse
-Repository created for academic activities
+# Auditoria de Engenharia de Software - Langfuse
+
+## Objetivo
+Realizar auditoria baseada em CMMI e MPS.BR.
+
+## Conteúdo
+- Auditoria
+- Modelagem UML
+- Plano de melhoria
+- Evidências
+
+## Estrutura
+/docs -> documentos  
+/diagramas -> UML  
+/evidencias -> provas da análise  
+/graficos -> gráficos
+
+## Vídeo
+[COLOCAR LINK AQUI]
+
 
 - IV. Eixos de Análise
 * Verificação e Validação (Foco: V&V)
