@@ -38,6 +38,27 @@ Realizar auditoria baseada em CMMI e MPS.BR.
 * Tabela para exemplificação de validação e verificação
 * Diagnóstico
 
+## Plano de Melhoria
+
+- Introdução  
+- Priorização dos Problemas  
+- Relação entre Problemas e Prioridade  
+
+- Implantação de Gerência de Projetos (GP)  
+  - Problemas relacionados  
+  - Justificativa  
+  - Ação proposta  
+  - Impacto esperado  
+
+- Implantação de Gerência de Requisitos (GR)  
+  - Problemas relacionados  
+  - Justificativa  
+  - Ação proposta  
+  - Impacto esperado  
+
+- Alinhamento com Modelos de Maturidade  
+- Conclusão do Plano de Melhoria  
+- Considerações Finais  
 
 
 
