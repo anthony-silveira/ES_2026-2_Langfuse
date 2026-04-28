@@ -18,7 +18,6 @@ Realizar auditoria baseada em CMMI e MPS.BR.
 
 ## Vídeo
 [COLOCAR LINK AQUI]
-git@github.com:anthony-silveira/ES_2026-2_Langfuse.git
 
 ## Eixo II — Fundamentos e Alinhamento
 - Fundamentos e Alinhamento  
