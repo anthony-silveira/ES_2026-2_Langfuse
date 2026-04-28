@@ -385,3 +385,225 @@ A combinação de:
 posiciona o projeto em um nível avançado de qualidade, compatível com modelos como CMMI e MPS.BR.
 
 A principal oportunidade de melhoria está na mitigação de riscos associados à dependência de serviços externos.
+
+
+# Diagnóstico do Eixo GQA
+
+O repositório não define explicitamente o significado do eixo GQA. Dessa forma, este diagnóstico foi elaborado com base na evidência técnica levantada ao longo da auditoria realizada no repositório do Langfuse, incluindo análise de arquivos de contribuição, Pull Requests, workflows de integração contínua e issues do projeto.
+
+A análise foi alinhada às práticas de **Process and Product Quality Assurance (PPQA)** do CMMI e **Garantia da Qualidade (GQA)** do MPS.BR, que tratam da definição, monitoramento e verificação da conformidade dos processos e produtos de software em relação aos padrões estabelecidos.
+
+---
+
+## 1. Indicadores positivos
+
+### 1.1 Diretrizes formais de contribuição
+
+O projeto Langfuse estabelece diretrizes claras de contribuição por meio do arquivo `CONTRIBUTING.md`, definindo padrões para fluxo de desenvolvimento, controle de mudanças e validação de código.
+
+**Principais regras identificadas:**
+
+- Necessidade de abertura prévia de issue para mudanças significativas  
+- Submissão obrigatória via Pull Requests  
+- Exigência de testes automatizados aprovados antes do merge  
+- Execução de testes no pipeline de CI/CD  
+- Uso de Conventional Commits  
+- Utilização de pre-commit hooks  
+- Organização por issues e labels  
+- Assinatura obrigatória do CLA  
+
+Essas práticas evidenciam a existência de padrões formais de processo, conforme PPQA (CMMI) e GQA (MPS.BR).
+
+---
+
+### 1.2 Uso de Pull Requests com revisão
+
+O Langfuse utiliza Pull Requests como mecanismo central de controle de qualidade.
+
+**Características observadas:**
+
+- Revisão antes da integração  
+- Discussão técnica entre colaboradores  
+- Validação automatizada  
+- Histórico rastreável  
+
+Os PRs funcionam como pontos formais de verificação dos artefatos.
+
+---
+
+#### 1.2.1 PR de feature (#13282)
+
+- Implementação de nova funcionalidade  
+- Descrição clara e checklist preenchido  
+- Revisão técnica com ajustes  
+- Aprovação final por mantenedor  
+
+---
+
+#### 1.2.2 PR de correção (#13276)
+
+- Identificação de causa raiz  
+- Plano de testes detalhado  
+- Execução de lint, typecheck e testes  
+- Diversas validações automatizadas  
+
+---
+
+#### 1.2.3 PR de manutenção (#13265)
+
+- Foco em estabilidade de testes  
+- Falha inicial → correção → reintegração  
+- Demonstra atuação do CI/CD como barreira de qualidade  
+
+---
+
+#### 1.2.4 Síntese
+
+A análise dos PRs evidencia:
+
+- Validação automatizada  
+- Aprovação obrigatória antes do merge  
+- Controle via CI/CD  
+- Alta conformidade com padrões  
+
+---
+
+### 1.3 Integração contínua e automação
+
+O Langfuse utiliza workflows em `.github/workflows`.
+
+No contexto do GQA, atuam como:
+
+- Mecanismo automatizado de auditoria contínua  
+- Bloqueio de alterações fora do padrão  
+- Garantia de conformidade antes do merge  
+
+---
+
+### 1.4 Padronização de código e commits
+
+Ferramentas utilizadas:
+
+- ESLint  
+- TypeScript  
+- Pre-commit hooks  
+- Conventional Commits  
+
+Benefícios:
+
+- Consistência  
+- Legibilidade  
+- Rastreabilidade  
+- Facilidade de manutenção  
+
+---
+
+### 1.5 Execução de testes automatizados
+
+Os testes são obrigatórios antes da integração.
+
+No GQA, funcionam como:
+
+- Barreiras objetivas de qualidade  
+- Garantia de conformidade com padrões definidos  
+
+---
+
+## 2. Pontos de atenção
+
+### 2.1 Ausência de métricas explícitas de qualidade
+
+Não há evidências claras de:
+
+- Cobertura de testes  
+- Indicadores quantitativos de qualidade  
+
+Isso limita a mensuração objetiva da evolução do sistema.
+
+---
+
+### 2.2 Tratamento implícito da dívida técnica
+
+- Gerenciada via issues e PRs  
+- Ausência de processo formal estruturado  
+
+---
+
+### 2.3 Monitoramento contínuo limitado
+
+Apesar de validações automatizadas:
+
+- Não há evidência de ferramentas consolidadas de análise contínua de qualidade  
+
+---
+
+## 3. Diagnóstico por leitura crítica
+
+### 3.1 Projeto
+
+O Langfuse apresenta abordagem estruturada de GQA baseada em:
+
+- Diretrizes formais  
+- Automação  
+- Revisão contínua  
+
+---
+
+### 3.2 Justificativa
+
+Observa-se:
+
+- Forte controle de qualidade no processo e produto  
+- Uso consistente de práticas modernas  
+
+Limitações:
+
+- Falta de métricas quantitativas  
+- Ausência de gestão estruturada da dívida técnica  
+
+---
+
+### 3.3 Resultado
+
+O projeto apresenta:
+
+- **Nível intermediário a avançado de maturidade em GQA**
+
+Com oportunidades de evolução em:
+
+- Monitoramento quantitativo  
+- Formalização de processos de qualidade  
+
+---
+
+## 4. Fechamento prático
+
+### Diagnóstico final
+
+- Diretrizes formais de contribuição (CONTRIBUTING.md)  
+- Uso consistente de Pull Requests com revisão  
+- Validação automatizada via CI/CD  
+- Padronização de código e commits  
+- Execução obrigatória de testes  
+- Ausência de métricas explícitas de qualidade  
+- Dívida técnica tratada de forma informal  
+- Monitoramento contínuo limitado  
+
+---
+
+## Conclusão
+
+O Langfuse apresenta um nível consistente de maturidade em Garantia da Qualidade, com forte adoção de práticas modernas como automação, padronização e controle de mudanças.
+
+As evidências demonstram aderência ao:
+
+- **CMMI (PPQA)**  
+- **MPS.BR (GQA)**  
+
+Entretanto, há oportunidades de evolução em:
+
+- Definição de métricas formais de qualidade  
+- Gestão estruturada da dívida técnica  
+- Monitoramento contínuo da qualidade  
+
+Essas melhorias podem elevar ainda mais o nível de maturidade do projeto.
