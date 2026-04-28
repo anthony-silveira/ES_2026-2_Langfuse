@@ -1,144 +1,211 @@
 # Plano de Melhoria
 
-## Introdução
-Como resultado da auditoria realizada no sistema baseado no Langfuse, foram identificados diversos problemas relacionados à ausência de formalização de processos, apesar da elevada maturidade arquitetural observada.
+## 1. Introdução
 
-A tabela de problemas identificados evidenciou lacunas principalmente nas áreas de planejamento, controle de requisitos e gestão de riscos. Já a priorização destacou como críticos os problemas P1 (ausência de planejamento) e P2 (falta de gestão de requisitos), ambos classificados com prioridade alta.
+A partir da auditoria realizada no ecossistema baseado no Langfuse, observou-se que o sistema apresenta alto nível de maturidade técnica, especialmente nos aspectos arquiteturais, de verificação e validação e na utilização de práticas modernas de desenvolvimento colaborativo.
 
-Além disso, a análise da modelagem UML e do diagnóstico arquitetural revelou um sistema com alta complexidade, caracterizado por:
+Entretanto, foram identificadas lacunas relacionadas à formalização e padronização de processos, principalmente nos eixos de Gerência de Projetos (GP), Gerência de Requisitos (GR) e Gestão de Riscos. Essas lacunas não indicam ausência de práticas, mas sim execução parcialmente estruturada, comum em ambientes ágeis e open-source.
 
-- Centralidade da entidade **Project**
-- Múltiplos fluxos críticos (Trace → Observation → Score)
-- Forte dependência de serviços externos
-- Complexidade concentrada na camada de LLM
+A análise da modelagem UML e da arquitetura evidenciou um sistema complexo, caracterizado por:
 
-Esse cenário reforça a necessidade de processos bem definidos para garantir controle e evolução do sistema.
+- Centralidade da entidade Project  
+- Fluxos críticos de observabilidade (Trace → Observation → Score)  
+- Forte dependência de serviços externos  
+- Complexidade concentrada na camada de LLM  
 
----
-
-## Priorização dos Problemas
-
-| ID | Problema | Evidência | Processo Afetado | Impacto |
-|----|---------|----------|------------------|--------|
-| P1 | Ausência de planejamento formal | Não há controle explícito de atividades | Gerência de Projetos (GP) | Baixa previsibilidade |
-| P2 | Falta de gestão de requisitos | Não há rastreabilidade clara | Gerência de Requisitos (GR) | Dificuldade de evolução |
-| P3 | Alta complexidade na camada de LLM | Camada central concentra múltiplas responsabilidades | Qualidade / Arquitetura | Risco de falhas sistêmicas |
-| P4 | Dependência de serviços externos | Uso de múltiplos serviços (Redis, APIs, etc.) | Gerência de Projetos (com foco em riscos) | Baixa resiliência |
-| P5 | Falta de controle formal de riscos | Não há evidência de mitigação estruturada | Gerência de Projetos (GP) | Instabilidade |
+Esse cenário reforça a necessidade de fortalecimento dos processos formais, garantindo maior previsibilidade, controle e evolução sustentável do sistema.
 
 ---
 
-## Relação entre Problemas e Prioridade
+## 2. Priorização dos Problemas
 
-Com base na análise realizada:
+### Tabela de Problemas Identificados
 
-- **P1 (Planejamento)** → Prioridade Alta → Impacta a organização do projeto  
-- **P2 (Requisitos)** → Prioridade Alta → Impacta a evolução do sistema  
-- **P3 e P4** → Prioridade Média → Representam riscos operacionais  
-
-A priorização orientou a definição das ações de melhoria, focando nos problemas de maior impacto.
+| ID  | Problema                                   | Evidência                         | Processo Afetado                  | Impacto                     |
+|-----|--------------------------------------------|----------------------------------|----------------------------------|-----------------------------|
+| P1  | Ausência de formalização do planejamento   | Planejamento implícito via Issues | Gerência de Projetos (GP)         | Baixa previsibilidade       |
+| P2  | Informalidade na gestão de requisitos      | PRs sem Issues vinculadas        | Gerência de Requisitos (GR)       | Lacunas de rastreabilidade  |
+| P3  | Complexidade elevada na camada de LLM      | Centralização de lógica crítica  | Arquitetura / Qualidade           | Risco sistêmico             |
+| P4  | Forte dependência de serviços externos     | Uso de múltiplas APIs            | Gerência de Projetos (Riscos)     | Baixa resiliência           |
+| P5  | Ausência de gestão formal de riscos        | Mitigações não documentadas      | Gerência de Projetos (GP)         | Instabilidade operacional   |
 
 ---
 
-## 1. Implantação de Gerência de Projetos (GP)
+## 3. Relação entre Problemas e Prioridade
 
-### Problemas relacionados
-- P1 — Ausência de planejamento formal  
+A priorização foi definida com base no impacto identificado:
+
+- P1 (Planejamento) → **Prioridade Alta**  
+- P2 (Requisitos) → **Prioridade Alta**  
+- P3 e P4 (Arquitetura e dependências) → **Prioridade Média**  
+- P5 (Riscos) → **Prioridade Alta**  
+
+Observa-se que os problemas mais críticos estão relacionados à estruturação dos processos, e não à qualidade técnica do sistema.
+
+---
+
+## 4. Ações de Melhoria
+
+### 4.1 Implantação de Gerência de Projetos (GP)
+
+**Problemas relacionados:**
+- P1 — Falta de formalização do planejamento  
 - P4 — Dependência de serviços externos  
-- P5 — Falta de gestão de riscos  
+- P5 — Ausência de gestão de riscos  
 
-### Justificativa
-Apesar da arquitetura bem definida, não foram identificadas evidências de:
-- Planejamento estruturado  
-- Controle formal de atividades  
-- Gestão de riscos  
+**Justificativa**
 
-Essa lacuna é crítica considerando:
-- A dependência de serviços externos  
-- A complexidade da camada de LLM  
-- A quantidade de componentes interligados  
+A auditoria demonstrou que o projeto utiliza práticas ágeis e evidências digitais (Issues, PRs e CI/CD), porém sem formalização explícita de planejamento e controle.
 
-### Ação proposta
-Implementar um processo estruturado de Gerência de Projetos, incluindo:
-- Planejamento de atividades (Kanban ou Scrum)  
-- Definição de tarefas e responsáveis  
-- Monitoramento contínuo  
-- Gestão de riscos  
+Essa lacuna torna-se crítica devido a:
 
-### Impacto esperado
-- Maior organização  
-- Redução de riscos  
+- Alta dependência de serviços externos (APIs de LLM)  
+- Complexidade da arquitetura  
+- Necessidade de previsibilidade em releases  
+
+**Ação proposta**
+
+- Planejamento iterativo (Scrum ou Kanban)  
+- Definição clara de tarefas e responsáveis  
+- Uso de métricas (lead time, cycle time)  
+- Monitoramento contínuo via dashboards  
+- Gestão formal de riscos (registro, análise e mitigação)  
+
+**Impacto esperado**
+
+- Aumento da previsibilidade  
+- Redução de falhas operacionais  
 - Melhor controle da evolução do sistema  
 
 ---
 
-## 2. Implantação de Gerência de Requisitos (GR)
+### 4.2 Implantação de Gerência de Requisitos (GR)
 
-### Problemas relacionados
-- P2 — Falta de requisitos definidos  
-- P3 — Falta de rastreabilidade  
+**Problema relacionado:**
+- P2 — Informalidade na gestão de requisitos  
 
-### Justificativa
-A modelagem UML evidencia a existência de múltiplos fluxos:
-- Observabilidade (Trace → Observation → Score)  
-- Experimentação (Dataset → DatasetRun)  
-- Prompt Engineering  
+**Justificativa**
 
-No entanto, não há evidências de:
-- Controle formal de requisitos  
-- Rastreabilidade entre requisitos e código  
-- Gestão de mudanças  
+O sistema já apresenta práticas avançadas de requisitos, como:
 
-### Ação proposta
-Estabelecer um processo de Gerência de Requisitos com:
-- Criação de backlog estruturado (GitHub Issues)  
-- Definição de requisitos funcionais e não funcionais  
-- Rastreabilidade entre requisitos e componentes  
-- Controle de mudanças  
+- Uso de Discussions (RFCs)  
+- Rastreabilidade via Pull Requests  
+- Validação assistida por IA  
 
-### Impacto esperado
-- Clareza no desenvolvimento  
-- Redução de retrabalho  
-- Melhor manutenção  
+No entanto, existem lacunas em:
+
+- PRs sem vínculo com Issues  
+- Falta de critérios de aceitação  
+- Dependência de conhecimento tácito  
+
+**Ação proposta**
+
+- Obrigatoriedade de Issues para mudanças funcionais  
+- Definição de critérios de aceitação  
+- Padronização de templates  
+- Rastreabilidade Issue → PR → Código  
+- Controle formal de mudanças  
+
+**Impacto esperado**
+
+- Maior clareza no desenvolvimento  
+- Redução de ambiguidades  
+- Melhor rastreabilidade  
 
 ---
 
-## 3. Alinhamento com Modelos de Maturidade
+### 4.3 Melhoria da Gestão de Riscos em Sistemas LLM
+
+**Problemas relacionados:**
+- P4 — Dependência de serviços externos  
+- P5 — Falta de formalização de riscos  
+
+**Justificativa**
+
+Riscos identificados:
+
+- Volatilidade de APIs (OpenAI, Anthropic)  
+- Falhas de integração  
+- Custos variáveis  
+- Prompt injection  
+
+**Ação proposta**
+
+- Registro de riscos (risk log)  
+- Estratégias de fallback  
+- Versionamento de prompts  
+- Monitoramento de custos  
+- Plano de contingência  
+
+**Impacto esperado**
+
+- Maior resiliência  
+- Redução de impactos operacionais  
+- Melhor controle de custos  
+
+---
+
+### 4.4 Redução da Complexidade da Camada de LLM
+
+**Problema relacionado:**
+- P3 — Complexidade da camada de LLM  
+
+**Justificativa**
+
+A centralização da lógica cria um ponto crítico de risco e alta complexidade.
+
+**Ação proposta**
+
+- Modularização da camada  
+- Testes por provedor  
+- Monitoramento de performance  
+- Separação de responsabilidades  
+
+**Impacto esperado**
+
+- Redução de acoplamento  
+- Maior manutenibilidade  
+- Menor risco sistêmico  
+
+---
+
+## 5. Alinhamento com Modelos de Maturidade
 
 As melhorias propostas estão alinhadas com:
 
-- :contentReference[oaicite:0]{index=0}  
-  - Project Planning (PP)  
-  - Requirements Management (REQM)  
+### CMMI
+- Project Planning (PP)  
+- Requirements Management (REQM)  
+- Process and Product Quality Assurance (PPQA)  
 
-- :contentReference[oaicite:1]{index=1}  
-  - Gerência de Projetos (GP)  
-  - Gerência de Requisitos (GR)  
+### MPS.BR
+- Gerência de Projetos (GP)  
+- Gerência de Requisitos (GR)  
+- Garantia da Qualidade (GQA)  
 
-Esses processos são fundamentais no nível G, garantindo controle básico do projeto.
-
----
-
-## 4. Conclusão do Plano de Melhoria
-
-A integração entre problemas, priorização e análise arquitetural permitiu identificar claramente os gaps de maturidade.
-
-Embora o sistema apresente alta qualidade técnica, a ausência de processos formais limita sua evolução.
-
-A implementação das práticas propostas permitirá:
-- Redução de riscos  
-- Aumento da previsibilidade  
-- Evolução do nível de maturidade  
+Esses processos são fundamentais para evolução do sistema no nível G (Iniciado) e níveis superiores.
 
 ---
 
-## 5. Considerações Finais
+## 6. Conclusão do Plano de Melhoria
 
-A análise evidenciou que o sistema possui:
+A análise integrada demonstrou que o sistema possui alta maturidade técnica, porém apresenta lacunas na formalização dos processos.
 
-- Alta maturidade arquitetural  
-- Baixa maturidade de processo  
+As ações propostas focam em:
 
-Apesar da base técnica sólida, sua evolução depende diretamente da adoção de processos formais.
+- Estruturação do planejamento  
+- Fortalecimento da gestão de requisitos  
+- Formalização da gestão de riscos  
+- Redução de complexidade técnica  
 
-As melhorias propostas demonstram forte aderência aos modelos CMMI e MPS.BR e representam um passo essencial para a transição de um processo informal para um modelo estruturado de Engenharia de Software.
+A implementação dessas melhorias permitirá elevar o nível de maturidade do sistema, garantindo maior controle, previsibilidade e sustentabilidade.
+
+---
+
+## 7. Considerações Finais
+
+O sistema analisado apresenta uma base arquitetural sólida, com forte aderência às práticas modernas de desenvolvimento de software, especialmente no contexto de aplicações baseadas em LLM.
+
+Entretanto, sua evolução sustentável depende da formalização dos processos, reduzindo a dependência de práticas informais.
+
+Dessa forma, o plano de melhoria representa um passo essencial para a transição para um modelo mais maduro, alinhado às boas práticas da Engenharia de Software e aos modelos CMMI e MPS.BR.
