@@ -1,4 +1,4 @@
-# Modelagem e Arquitetura - (Eixo III - PJR)
+# Modelagem e Arquitetura (Eixo III - PJR)
 
 ## Nota de escopo
 
