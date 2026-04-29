@@ -1,8 +1,6 @@
 # ES_2026-2_Langfuse
 # Auditoria de Engenharia de Software - Langfuse
 
-##  — Eixos de Análise
-
 ## Estrutura do Projeto
 
 - 📂 [docs](docs/)
@@ -17,6 +15,7 @@
 - 📄 [Modelagem](docs/modelagem.md)
 - 📄 [Plano de Melhoria](docs/plano_melhoria.md)
 
+##  — Eixos de Análise
 ---
 
 ### I. Eixo I — GPR (Gerência de Projetos / Ciclo de Vida)
