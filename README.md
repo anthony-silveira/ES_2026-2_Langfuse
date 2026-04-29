@@ -48,7 +48,7 @@ Local: `docs/auditoria.md`
 
 ### III. Eixo III — PJR (Projeto / Arquitetura)
 
-📂 Local: `docs/modelagem.md`
+Local: `docs/modelagem.md`
 
 - Análise da Arquitetura do Sistema
 - Modelagem UML (Diagrama de Classes)
@@ -64,7 +64,7 @@ Local: `docs/auditoria.md`
 
 ### IV. Eixo IV — Verificação e Validação (V&V)
 
-📂 Local: `docs/auditoria.md`
+Local: `docs/auditoria.md`
 
 - Diferença entre Verificação e Validação
 - Análise da pasta `.github/workflows`
@@ -82,7 +82,7 @@ Local: `docs/auditoria.md`
 
 ### V. Eixo V — GQA (Garantia da Qualidade)
 
-📂 Local: `docs/auditoria.md`
+Local: `docs/auditoria.md`
 
 - Diretrizes formais de contribuição (CONTRIBUTING.md)
 - Uso de Pull Requests com revisão
@@ -139,9 +139,6 @@ Entretanto, para evolução em maturidade (CMMI / MPS.BR), recomenda-se:
 
 ---
 
-## Vídeo
-
-📎 [COLOCAR LINK AQUI]
 
 
 
