@@ -111,13 +111,13 @@ A análise integrada dos cinco eixos evidencia que o projeto apresenta:
 
 ## Síntese Geral de Maturidade
 
-| Eixo | Área | Nível |
-|------|------|------|
-| GPR  | Processo | Intermediário |
-| GRE  | Requisitos | Alto |
-| PJR  | Arquitetura | Alto |
-| V&V  | Verificação e Validação | Alto |
-| GQA  | Qualidade | Intermediário/Alto |
+| Eixo | Área                     | Nível              |
+|:----:|:------------------------:|:------------------:|
+| GPR  | Processo                 | Intermediário      |
+| GRE  | Requisitos               | Alto               |
+| PJR  | Arquitetura              | Alto               |
+| V&V  | Verificação e Validação  | Alto               |
+| GQA  | Qualidade                | Intermediário/Alto |
 
 ---
 
