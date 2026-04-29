@@ -1,13 +1,27 @@
 # ES_2026-2_Langfuse
 # Auditoria de Engenharia de Software - Langfuse
 
-## Continuação — Eixos de Análise
+##  — Eixos de Análise
+
+## Estrutura do Projeto
+
+- 📂 [docs](docs/)
+- 📂 [diagramas](diagramas/)
+- 📂 [evidencias](evidencias/)
+- 📂 [graficos](graficos/)
+
+## Documentos
+
+- 📄 [Auditoria](docs/auditoria.md)
+- 📄 [Processo](docs/processo.md)
+- 📄 [Modelagem](docs/modelagem.md)
+- 📄 [Plano de Melhoria](docs/plano_melhoria.md)
 
 ---
 
 ### I. Eixo I — GPR (Gerência de Projetos / Ciclo de Vida)
 
-📂 Local: `docs/processo.md`
+Local: `docs/processo.md`
 
 - Ciclo de Vida Ágil (Iterativo e Incremental)
 - Frequência de Releases
@@ -21,7 +35,7 @@
 
 ### II. Eixo II — GRE (Gerência de Requisitos)
 
-📂 Local: `docs/auditoria.md`
+Local: `docs/auditoria.md`
 
 - Diagnóstico do Eixo GRE
 - Elicitação via RFC (Discussions)
